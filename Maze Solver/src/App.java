@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class App {
 
@@ -8,34 +10,9 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         ArrayList<Maze> mazes = new ArrayList<Maze>();
-        Maze maze1 = new Maze();
-        int[][] m = {
-                { 2, 0, 0, 0, 1, 1, 0, 1 },
-                { 1, 0, 1, 0, 1, 0, 0, 1 },
-                { 1, 0, 1, 0, 1, 1, 1, 1 },
-                { 1, 0, 1, 0, 1, 0, 1, 0 },
-                { 1, 0, 1, 1, 1, 0, 1, 1 },
-                { 1, 0, 0, 0, 1, 1, 0, 1 },
-                { 1, 1, 0, 1, 0, 1, 0, 1 },
-                { 0, 1, 1, 1, 1, 1, 1, 1 }, };
-        maze1.maze = m;
-        maze1.start = new Pos(7, 7);
+        Maze m1 = new Maze();
+        mazes.add(m1);
 
-        Maze maze2 = new Maze();
-        int[][] n = {
-                { 2, 0, 0, 0, 1, 1, 0, 1 },
-                { 1, 0, 1, 0, 1, 0, 0, 1 },
-                { 1, 0, 1, 0, 1, 1, 1, 1 },
-                { 1, 0, 1, 0, 1, 0, 1, 0 },
-                { 1, 0, 1, 1, 1, 0, 1, 1 },
-                { 1, 0, 0, 0, 1, 1, 0, 1 },
-                { 1, 1, 0, 1, 0, 1, 0, 1 },
-                { 0, 1, 1, 1, 1, 1, 1, 1 }, };
-        maze2.maze = n;
-        maze2.start = new Pos(7, 7);
-
-        mazes.add(maze1);
-        mazes.add(maze2);
         for (Maze maze : mazes) {
 
             if (solveMaze(maze)) {
